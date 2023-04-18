@@ -52,7 +52,7 @@ const LogoSub = styled.span`
   bottom: -16%;
 `;
 
-const MenuButton = styled.a`
+const MenuButton = styled.span`
   font-size: 20px;
   color: #fff;
   ${tw`flex items-center cursor-pointer`}

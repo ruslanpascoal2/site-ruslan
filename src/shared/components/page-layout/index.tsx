@@ -11,4 +11,14 @@ export const ContentContainer = styled.div`
   ${tw`container`}
 `
 
+export const SectionTitle = styled.h1`
+    font-family: "Muli", sans-serif;
+    color: var(--color-purple);
+    ${
+      tw`
+      text-4xl
+      `
+    }
+`
+
 export default PageContainer;
