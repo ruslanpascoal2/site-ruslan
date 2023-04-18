@@ -8,6 +8,7 @@ import {
   LinkedinOutlined,
   MediumOutlined,
 } from "@ant-design/icons";
+import eu from '../../images/me.png';
 
 const AboutSection = styled.section`
   background-color: var(--color-bg-lighter);
@@ -32,7 +33,12 @@ const AboutBoard = styled.div`
 `;
 
 const ImageContainer = styled.div`
+  border-radius: 4px;
   background-color: #0f0f0f;
+  /* background-image: url(${eu}); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   ${tw`
     w-full aspect-square
     `}
@@ -92,7 +98,8 @@ export const About = () => {
     <AboutSection id="quem-sou-eu">
       <ContentContainer>
         <AboutBoard>
-          <ImageContainer></ImageContainer>
+          <ImageContainer>
+          </ImageContainer>
           <BioContainer>
             <Title>Quem sou eu</Title>
             <MyName>Ruslan de Araújo e Pascoal</MyName>

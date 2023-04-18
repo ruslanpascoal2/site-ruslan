@@ -89,10 +89,12 @@ export const Navbar = () => {
     <NavbarContainer>
       <ContentContainer>
         <NavbarContent>
+          <a href="#inicio">
           <Logo>
             <LogoName>Ruslan</LogoName>
             <LogoSub>web developer</LogoSub>
           </Logo>
+          </a>
           {isDesktopOrLaptop ? (
             <>
               <MenuContainer>
