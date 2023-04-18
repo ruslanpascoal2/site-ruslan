@@ -11,7 +11,9 @@ const BaseButton = styled.button`
 `;
 export const OrangeButton = styled(BaseButton)`
   background-color: var(--color-orange);
+  color: var(--color-bg);
 `;
 export const PurpleButton = styled(BaseButton)`
-  background-color: var(--purple-orange);
+  background-color: var(--color-purple);
+  color: var(--color-bg);
 `;

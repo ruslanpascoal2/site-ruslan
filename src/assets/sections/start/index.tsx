@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { OrangeButton } from "../../../shared/components/primary-button";
+import { OrangeButton, PurpleButton } from "../../../shared/components/primary-button";
 import { ContentContainer } from "../../../shared/components/page-layout";
 
 const StartSection = styled.section`
@@ -10,7 +10,7 @@ const StartSection = styled.section`
   flex-direction: column;
   justify-content: center;
   ${tw`
-    p-0 lg:pe-16 items-center lg:items-start
+     items-center lg:items-start
     `}
 `;
 

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { MenuOutlined } from "@ant-design/icons";
 import { useMediaQuery } from "react-responsive";
+import { ContentContainer } from "../page-layout";
 
 const NavbarContainer = styled.div`
   height: 100px;
@@ -11,7 +12,7 @@ const NavbarContainer = styled.div`
   left: 0;
   background-color: var(--color-bg);
   ${tw`
-        px-5
+        px-5 lg:px-0
         w-screen
         flex
         items-center
@@ -21,7 +22,6 @@ const NavbarContainer = styled.div`
 
 const NavbarContent = styled.div`
   ${tw`
-    container
     flex
     items-center
     justify-between`}
@@ -64,24 +64,22 @@ const MenuContainer = styled.ul`
   padding: 0;
   display: flex;
   color: #fff;
-  ${
-    tw`
+  ${tw`
       space-x-10
-    `
-  }
-`
+    `}
+`;
 
 const MenuItem = styled.li`
   text-decoration: none;
   display: block;
-`
+`;
 
 const MenuLink = styled.a`
   cursor: pointer;
-  :hover{
-    color: var(--color-purple)
+  :hover {
+    color: var(--color-purple);
   }
-`
+`;
 
 export const Navbar = () => {
   const isDesktopOrLaptop = useMediaQuery({
@@ -89,37 +87,39 @@ export const Navbar = () => {
   });
   return (
     <NavbarContainer>
-      <NavbarContent>
-        <Logo>
-          <LogoName>Ruslan</LogoName>
-          <LogoSub>web developer</LogoSub>
-        </Logo>
-        {isDesktopOrLaptop ? (
-          <>
-            <MenuContainer>
-              <MenuItem>
-                <MenuLink href="#inicio">Início</MenuLink>
-              </MenuItem>
-              <MenuItem>
-                <MenuLink href="#quem-sou-eu">Quem sou eu</MenuLink>
-              </MenuItem>
-              <MenuItem>
-                <MenuLink>Projetos</MenuLink>
-              </MenuItem>
-              <MenuItem>
-                <MenuLink>Experimentações</MenuLink>
-              </MenuItem>
-              <MenuItem>
-                <MenuLink>EN</MenuLink>
-              </MenuItem>
-            </MenuContainer>
-          </>
-        ) : (
-          <MenuButton>
-            <MenuOutlined />
-          </MenuButton>
-        )}
-      </NavbarContent>
+      <ContentContainer>
+        <NavbarContent>
+          <Logo>
+            <LogoName>Ruslan</LogoName>
+            <LogoSub>web developer</LogoSub>
+          </Logo>
+          {isDesktopOrLaptop ? (
+            <>
+              <MenuContainer>
+                <MenuItem>
+                  <MenuLink href="#inicio">Início</MenuLink>
+                </MenuItem>
+                <MenuItem>
+                  <MenuLink href="#quem-sou-eu">Quem sou eu</MenuLink>
+                </MenuItem>
+                <MenuItem>
+                  <MenuLink href="#projetos">Projetos</MenuLink>
+                </MenuItem>
+                <MenuItem>
+                  <MenuLink href="#experimentacoes">Experimentações</MenuLink>
+                </MenuItem>
+                <MenuItem>
+                  <MenuLink>EN</MenuLink>
+                </MenuItem>
+              </MenuContainer>
+            </>
+          ) : (
+            <MenuButton>
+              <MenuOutlined />
+            </MenuButton>
+          )}
+        </NavbarContent>
+      </ContentContainer>
     </NavbarContainer>
   );
 };

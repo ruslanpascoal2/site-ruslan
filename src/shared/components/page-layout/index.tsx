@@ -11,9 +11,13 @@ export const ContentContainer = styled.div`
   ${tw`container`}
 `
 
-export const SectionTitle = styled.h1`
+interface SectionTitleProps {
+  orange?: boolean;
+  purple?: boolean;
+}
+export const SectionTitle = styled.h1<SectionTitleProps>`
     font-family: "Muli", sans-serif;
-    color: var(--color-purple);
+    color: ${props => props.orange ? 'var(--color-orange)' : ' var(--color-purple)' };
     ${
       tw`
       text-4xl

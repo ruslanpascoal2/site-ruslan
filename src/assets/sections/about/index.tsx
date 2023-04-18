@@ -15,9 +15,9 @@ const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
   ${tw`
-    p-0 lg:pe-16 items-center lg:items-start
+    pe-0 lg:pe-16  items-center lg:items-start
     `}
-  padding-top: 2rem;
+    padding-top: 100px;
 `;
 
 const AboutBoard = styled.div`
