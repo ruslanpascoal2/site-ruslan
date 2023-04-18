@@ -8,26 +8,25 @@ import {
   LinkedinOutlined,
   MediumOutlined,
 } from "@ant-design/icons";
-import eu from '../../images/me.png';
+import eu from "../../images/me.png";
 
 const AboutSection = styled.section`
   background-color: var(--color-bg-lighter);
-  min-height: 70vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   ${tw`
-    pe-0 lg:pe-16  items-center lg:items-start
+    pe-0 lg:pe-16 items-center lg:items-start lg:justify-center
     `}
-  padding-top: 100px;
 `;
 
 const AboutBoard = styled.div`
-  margin-top: 2rem;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 4rem;
   display: flex;
   ${tw`w-full
     columns-2
+    px-5 lg:px-0
     flex-wrap lg:flex-nowrap
     `}
 `;
@@ -98,8 +97,7 @@ export const About = () => {
     <AboutSection id="quem-sou-eu">
       <ContentContainer>
         <AboutBoard>
-          <ImageContainer>
-          </ImageContainer>
+          <ImageContainer></ImageContainer>
           <BioContainer>
             <Title>Quem sou eu</Title>
             <MyName>Ruslan de Araújo e Pascoal</MyName>
