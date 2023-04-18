@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { MenuOutlined } from "@ant-design/icons";
+import { useMediaQuery } from "react-responsive";
 
 const NavbarContainer = styled.div`
   height: 100px;
@@ -10,6 +11,7 @@ const NavbarContainer = styled.div`
   left: 0;
   background-color: var(--color-bg);
   ${tw`
+        px-5
         w-screen
         flex
         items-center
@@ -56,7 +58,35 @@ const MenuButton = styled.a`
   ${tw`flex items-center cursor-pointer`}
 `;
 
+const MenuContainer = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  color: #fff;
+  ${
+    tw`
+      space-x-10
+    `
+  }
+`
+
+const MenuItem = styled.li`
+  text-decoration: none;
+  display: block;
+`
+
+const MenuLink = styled.a`
+  cursor: pointer;
+  :hover{
+    color: var(--color-purple)
+  }
+`
+
 export const Navbar = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
   return (
     <NavbarContainer>
       <NavbarContent>
@@ -64,9 +94,31 @@ export const Navbar = () => {
           <LogoName>Ruslan</LogoName>
           <LogoSub>web developer</LogoSub>
         </Logo>
-        <MenuButton>
-          <MenuOutlined />
-        </MenuButton>
+        {isDesktopOrLaptop ? (
+          <>
+            <MenuContainer>
+              <MenuItem>
+                <MenuLink href="#inicio">Início</MenuLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuLink href="#quem-sou-eu">Quem sou eu</MenuLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuLink>Projetos</MenuLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuLink>Experimentações</MenuLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuLink>EN</MenuLink>
+              </MenuItem>
+            </MenuContainer>
+          </>
+        ) : (
+          <MenuButton>
+            <MenuOutlined />
+          </MenuButton>
+        )}
       </NavbarContent>
     </NavbarContainer>
   );
