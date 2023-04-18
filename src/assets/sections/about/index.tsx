@@ -17,7 +17,7 @@ const AboutSection = styled.section`
   ${tw`
     pe-0 lg:pe-16  items-center lg:items-start
     `}
-    padding-top: 100px;
+  padding-top: 100px;
 `;
 
 const AboutBoard = styled.div`
@@ -33,23 +33,19 @@ const AboutBoard = styled.div`
 
 const ImageContainer = styled.div`
   background-color: #0f0f0f;
-  ${
-    tw`
+  ${tw`
     w-full aspect-square
-    `
-  }
+    `}
 `;
 
 const BioContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  ${
-    tw`
+  ${tw`
     w-full aspect-square
     ps-0 lg:ps-12
-    `
-  }
+    `}
 `;
 
 const Title = styled.h5`
@@ -72,7 +68,7 @@ const Text = styled.p`
   font-size: 18px;
 `;
 
-const SocialMedia = styled.button`
+const SocialMedia = styled.a`
   min-height: 65px;
   min-width: 65px;
   border-radius: 8px;
@@ -111,16 +107,28 @@ export const About = () => {
               habilidades e conhecimentos para oferecer o melhor resultado.
             </Text>
             <SocialMediaContainer>
-              <SocialMedia>
+              <SocialMedia
+                href="https://www.linkedin.com/in/ruslan-pascoal-561214a0/"
+                target="_blank"
+              >
                 <LinkedinOutlined />
               </SocialMedia>
-              <SocialMedia>
+              <SocialMedia
+                target="_blank"
+                href="https://instagram.com/ruslanpascoal?igshid=ZjE2NGZiNDQ="
+              >
                 <InstagramOutlined />
               </SocialMedia>
-              <SocialMedia>
+              <SocialMedia
+                target="_blank"
+                href="https://github.com/ruslanpascoal2"
+              >
                 <GithubOutlined />
               </SocialMedia>
-              <SocialMedia>
+              <SocialMedia
+                target="_blank"
+                href="https://medium.com/@ruslan.ap2"
+              >
                 <MediumOutlined />
               </SocialMedia>
             </SocialMediaContainer>

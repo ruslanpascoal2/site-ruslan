@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { OrangeButton, PurpleButton } from "../../../shared/components/primary-button";
+import {
+  OrangeButton,
+  PurpleButton,
+} from "../../../shared/components/primary-button";
 import { ContentContainer } from "../../../shared/components/page-layout";
 
 const StartSection = styled.section`
@@ -43,7 +46,12 @@ export const Start = () => {
             Conte comigo para construir a presença online da sua empresa com
             criatividade e rapidez.
           </Sub>
-          <OrangeButton style={{ width: "200px" }}>Linkedin</OrangeButton>
+          <a
+            href="https://www.linkedin.com/in/ruslan-pascoal-561214a0/"
+            target="_blank"
+          >
+            <OrangeButton style={{ width: "200px" }}>Linkedin</OrangeButton>
+          </a>
         </Content>
       </ContentContainer>
     </StartSection>
