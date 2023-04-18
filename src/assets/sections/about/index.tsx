@@ -95,7 +95,7 @@ export const About = () => {
           <ImageContainer></ImageContainer>
           <BioContainer>
             <Title>Quem sou eu</Title>
-            <MyName>Ruslan Araújo Pascoal</MyName>
+            <MyName>Ruslan de Araújo e Pascoal</MyName>
             <Text>Fullstack Developer</Text>
             <Text style={{ marginTop: "2rem" }}>
               Sou um desenvolvedor fullstack com expertise no front-end e três

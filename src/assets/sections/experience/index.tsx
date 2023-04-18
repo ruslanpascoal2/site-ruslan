@@ -6,7 +6,7 @@ import {
   SectionTitle,
 } from "../../../shared/components/page-layout";
 
-const ProjectsSection = styled.section`
+const ExperienceSection = styled.section`
   background-color: var(--color-bg);
   min-height: 70vh;
   display: flex;
@@ -17,12 +17,12 @@ const ProjectsSection = styled.section`
   padding-top: 2rem;
 `;
 
-export const Projects = () => {
+export const Experience = () => {
   return (
-    <ProjectsSection id="projetos">
+    <ExperienceSection id="experiencia">
       <ContentContainer>
         <SectionTitle purple>Experiência</SectionTitle>
       </ContentContainer>
-    </ProjectsSection>
+    </ExperienceSection>
   );
 };

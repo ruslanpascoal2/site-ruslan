@@ -103,10 +103,10 @@ export const Navbar = () => {
                   <MenuLink href="#quem-sou-eu">Quem sou eu</MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink href="#projetos">Projetos</MenuLink>
+                  <MenuLink href="#experiencia">Experiência</MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink href="#experimentacoes">Experimentações</MenuLink>
+                  <MenuLink href="#projetos">Projetos</MenuLink>
                 </MenuItem>
                 <MenuItem>
                   <MenuLink>EN</MenuLink>
