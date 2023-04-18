@@ -5,7 +5,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 import "unfonts.css";
 import { RouterProvider } from "react-router-dom";
 import { Navbar } from "./shared/components/navbar";
-import router from "./routes/router";
+import router from "./config/router";
 import PageContainer from "./shared/components/page-layout";
 
 

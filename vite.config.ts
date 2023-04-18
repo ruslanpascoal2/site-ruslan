@@ -25,6 +25,21 @@ export default defineConfig({
       custom: {
         display: 'swap',
         families: {
+          'Archivo': {
+            src: './src/assets/fonts/Archivo-*',
+            transform(font) {
+              if(font.basename === 'Archivo-Bold'){
+                font.weight = 700;
+              }
+              if(font.basename === 'Archivo-Regular'){
+                font.weight = 400;
+              }
+              if(font.basename === 'Archivo-SemiBold'){
+                font.weight = 500;
+              }
+              return font;
+            },
+          },
           'Caveat': {
             src: './src/assets/fonts/Caveat-Bold*'
           },

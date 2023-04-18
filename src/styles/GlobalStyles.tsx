@@ -7,15 +7,16 @@ const CustomStyles = createGlobalStyle`
  body{
   --color-bg: rgb(13 11 23);
   --color-bg-lighter: #15131f;
+  --color-muted: #19162a;
   --color-red: #e51d37;
   --color-pink: #ff3a5e;
   --color-blue: #00a3ff;
   --color-green: #a6fb98;
   --color-purple: #d7bcfd;
+  --color-purple-muted: #d7bcfd17;
   --color-orange: #ffb16c;
-  --color-muted: #19162a;
-  --white-muted: #d8d8d8;
-  
+  --color-white-muted: #d8d8d8;
+  font-family: 'Archivo', sans-serif;
 }
 html {
   scroll-behavior: smooth;

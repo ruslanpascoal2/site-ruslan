@@ -22,7 +22,7 @@ const Head = styled.h1`
 
 const Sub = styled.h5`
   ${tw`text-lg lg:text-xl text-center lg:text-start w-full lg:w-3/4`}
-  color: var(--white-muted);
+  color: var(--color-white-muted);
   margin-bottom: 4rem;
 `;
 

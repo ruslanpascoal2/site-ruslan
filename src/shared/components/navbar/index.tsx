@@ -16,7 +16,7 @@ const NavbarContainer = styled.div`
         flex
         items-center
         `}
-  border-bottom: 1px solid var(--color-muted);
+  border-bottom: 1px solid var(--color-purple-muted);
 `;
 
 const NavbarContent = styled.div`
