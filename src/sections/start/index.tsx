@@ -5,7 +5,6 @@ import {
   OrangeButton,
   PurpleButton,
 } from "../../shared/components/primary-button";
-import { ContentContainer } from "../../shared/components/page-layout";
 import { gsap } from "gsap";
 
 const StartSection = styled.section`
@@ -33,6 +32,10 @@ const Sub = styled.h5`
 const Content = styled.div`
   ${tw`flex flex-col justify-center items-center lg:items-start`}
 `;
+
+const StartSectionContainer = styled.div`
+  ${tw`container`}
+`
 
 export const Start = () => {
   const el = useRef<any>(null);
@@ -80,7 +83,7 @@ export const Start = () => {
 
   return (
     <StartSection id="inicio">
-      <ContentContainer>
+      <StartSectionContainer>
         <Content ref={el}>
           <Head className="head">
             Transformar ideias em soluções digitais modernas e de alta
@@ -99,7 +102,7 @@ export const Start = () => {
             </OrangeButton>
           </a>
         </Content>
-      </ContentContainer>
+      </StartSectionContainer>
     </StartSection>
   );
 };
