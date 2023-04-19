@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Start } from "../../sections/start";
 import { About } from "../../sections/about";
 import { Experience } from "../../sections/experience";
@@ -11,6 +11,15 @@ import { store } from "../../store/store";
 export const Home = () => {
 
   const {isMenuOpen} = useSnapshot(store);
+
+  useEffect(() => {
+    if(isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+    else{
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMenuOpen])
 
   return (
     <main>
