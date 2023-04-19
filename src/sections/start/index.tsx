@@ -37,8 +37,19 @@ const Content = styled.div`
 export const Start = () => {
   const el = useRef<any>(null);
   const tl = useRef<any>(null);
+  const btn = useRef<any>(null);
 
+  
   useLayoutEffect(() => {
+    let animation = gsap.to(".btn-home", {
+      paused: true,
+      ease: "power1.out",
+      scale: 0.8,
+    });
+
+    btn.current.addEventListener("mouseenter", () => animation.play());
+    btn.current.addEventListener("mouseleave", () => animation.reverse());
+
     const ctx = gsap.context(() => {
       tl.current = gsap
         .timeline()
@@ -46,14 +57,12 @@ export const Start = () => {
           duration: 0.75,
           y: -300,
           autoAlpha: 0,
-          stagger: 1.5,
           ease: "circ.out",
         })
         .from(".sub", {
           duration: 0.75,
-          y: -150,
+          y: -300,
           autoAlpha: 0,
-          stagger: 1.5,
           ease: "circ.out",
         })
         .from("a", {
@@ -61,10 +70,10 @@ export const Start = () => {
           x: -150,
           ease: "back.out(1.7)",
           autoAlpha: 0,
-          stagger: 1.5,
         });
     }, el);
     return () => {
+      animation.kill();
       ctx.revert();
     };
   }, []);
@@ -85,7 +94,9 @@ export const Start = () => {
             href="https://www.linkedin.com/in/ruslan-pascoal-561214a0/"
             target="_blank"
           >
-            <OrangeButton style={{ width: "200px" }}>Linkedin</OrangeButton>
+            <OrangeButton className="btn-home" ref={btn} style={{ width: "200px" }}>
+              Linkedin
+            </OrangeButton>
           </a>
         </Content>
       </ContentContainer>
