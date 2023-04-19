@@ -4,7 +4,7 @@ import tw from "twin.macro";
 import {
   ContentContainer,
   SectionTitle,
-} from "../../../shared/components/page-layout";
+} from "../../shared/components/page-layout";
 
 type Experience = {
   title: string;

@@ -4,8 +4,8 @@ import tw from "twin.macro";
 import {
   OrangeButton,
   PurpleButton,
-} from "../../../shared/components/primary-button";
-import { ContentContainer } from "../../../shared/components/page-layout";
+} from "../../shared/components/primary-button";
+import { ContentContainer } from "../../shared/components/page-layout";
 
 const StartSection = styled.section`
   min-height: 100vh;

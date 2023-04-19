@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ContentContainer } from "../../../shared/components/page-layout";
+import { ContentContainer } from "../../shared/components/page-layout";
 import tw from "twin.macro";
 import {
   GithubOutlined,
@@ -8,8 +8,7 @@ import {
   LinkedinOutlined,
   MediumOutlined,
 } from "@ant-design/icons";
-import eu from "../../images/me.png";
-import peep from "../../images/peep-47.svg";
+import peep from "../../assets/images/peep-47.svg";
 
 const AboutSection = styled.section`
   background-color: var(--color-bg-lighter);
@@ -58,7 +57,7 @@ const Title = styled.h5`
   color: var(--color-orange);
   font-weight: bold;
   font-family: "Caveat";
-  font-size: 32px;
+  font-size: 36px;
   ${tw`mt-6 lg:mt-0`}
 `;
 
