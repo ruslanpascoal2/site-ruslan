@@ -8,12 +8,13 @@ import { toggleMenu } from "../../../store/store";
 
 const NavbarContainer = styled.div`
   height: 100px;
-  position: sticky;
+  position: fixed;
   z-index: 2;
   top: 0;
   left: 0;
   background-color: var(--color-bg);
   ${tw`
+  w-screen
         px-5 lg:px-0
         flex
         items-center
