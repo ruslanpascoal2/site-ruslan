@@ -4,16 +4,17 @@ import tw from "twin.macro";
 import { MenuOutlined } from "@ant-design/icons";
 import { useMediaQuery } from "react-responsive";
 import { ContentContainer } from "../page-layout";
+import { toggleMenu } from "../../../store/store";
 
 const NavbarContainer = styled.div`
   height: 100px;
-  position: fixed;
+  position: sticky;
+  z-index: 2;
   top: 0;
   left: 0;
   background-color: var(--color-bg);
   ${tw`
         px-5 lg:px-0
-        w-screen
         flex
         items-center
         `}
@@ -26,6 +27,10 @@ const NavbarContent = styled.div`
     items-center
     justify-between`}
 `;
+
+const NavbarContentContainer = styled(ContentContainer)`
+padding-top: 0;
+`
 
 const Logo = styled.div`
   ${tw`
@@ -85,9 +90,14 @@ export const Navbar = () => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
   });
+
+  const openMenu = () => {
+    toggleMenu();
+  }
+
   return (
     <NavbarContainer>
-      <ContentContainer>
+      <NavbarContentContainer>
         <NavbarContent>
           <a href="#inicio">
           <Logo>
@@ -116,12 +126,12 @@ export const Navbar = () => {
               </MenuContainer>
             </>
           ) : (
-            <MenuButton>
+            <MenuButton onClick={openMenu}>
               <MenuOutlined />
             </MenuButton>
           )}
         </NavbarContent>
-      </ContentContainer>
+      </NavbarContentContainer>
     </NavbarContainer>
   );
 };

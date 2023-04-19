@@ -23,14 +23,18 @@ const Row = styled.div`
     ${tw`flex items-center justify-center`}
 `
 
+const FooterContainer = styled.div`
+  ${tw`container`}
+`
+
 export const Footer = () => {
   return (
     <FooterSection>
-      <ContentContainer>
+      <FooterContainer>
         <Row>
         <h1> Copyright © 2023 Ruslan.</h1>
         </Row>
-      </ContentContainer>
+      </FooterContainer>
     </FooterSection>
   );
 };

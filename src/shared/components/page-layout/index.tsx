@@ -9,6 +9,7 @@ const PageContainer = styled.main`
 
 export const ContentContainer = styled.div`
   ${tw`container`}
+  padding-top: 100px;
 `
 
 interface SectionTitleProps {

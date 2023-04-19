@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 import { ContentContainer } from "../../shared/components/page-layout";
 import tw from "twin.macro";
@@ -33,7 +33,6 @@ const AboutBoard = styled.div`
 
 const ImageContainer = styled.div`
   border-radius: 4px;
-  /* background-color: #0f0f0f; */
   background-image: url(${peep}); 
   background-position: center;
   background-size: cover;
@@ -98,8 +97,8 @@ export const About = () => {
       <ContentContainer>
         <AboutBoard>
           <ImageContainer></ImageContainer>
-          <BioContainer>
-            <Title>Quem sou eu</Title>
+          <BioContainer >
+          <Title>Quem sou eu</Title>
             <MyName>Ruslan de Araújo e Pascoal</MyName>
             <Text>Fullstack Developer</Text>
             <Text style={{ marginTop: "2rem" }}>

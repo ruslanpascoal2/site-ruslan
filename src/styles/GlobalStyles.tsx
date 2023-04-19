@@ -1,6 +1,6 @@
 // src/styles/GlobalStyles.tsx
 import { createGlobalStyle } from "styled-components";
-import {GlobalStyles as BaseStyles } from "twin.macro";
+import tw, { GlobalStyles as BaseStyles } from "twin.macro";
 
 const CustomStyles = createGlobalStyle`
 
@@ -16,6 +16,7 @@ const CustomStyles = createGlobalStyle`
   --color-purple-muted: #d7bcfd17;
   --color-orange: #ffb16c;
   --color-white-muted: #d8d8d8;
+  --navbar-height-offset: -130px;
   font-family: 'Archivo', sans-serif;
 }
 html {
@@ -24,6 +25,8 @@ html {
 #root{
   background-color: var(--color-bg);
 }
+
+
 `;
 
 const GlobalStyles = () => (

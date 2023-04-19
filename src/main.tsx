@@ -14,9 +14,9 @@ const root = createRoot(container!);
 root.render(
   <React.StrictMode>
     <GlobalStyles />
-      <Navbar />
+    <Navbar />
     <PageContainer>
-      <RouterProvider router={router} />
+        <RouterProvider router={router} />
     </PageContainer>
   </React.StrictMode>
 );

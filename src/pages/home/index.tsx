@@ -1,23 +1,27 @@
 import React from "react";
-import styled from "styled-components";
 import { Start } from "../../sections/start";
 import { About } from "../../sections/about";
 import { Experience } from "../../sections/experience";
 import Projects from "../../sections/projects";
 import { Footer } from "../../sections/footer";
-
-const HomeContainer = styled.section`
-  /* padding-top: calc(100px + 2rem); */
-`;
+import { Menu } from "../../shared/components/menu";
+import { useSnapshot } from "valtio";
+import { store } from "../../store/store";
 
 export const Home = () => {
+
+  const {isMenuOpen} = useSnapshot(store);
+
   return (
-    <HomeContainer>
+    <main>
+      {
+        isMenuOpen && <Menu/>
+      }
       <Start />
       <About />
       <Experience />
       <Projects/>
       <Footer/>
-    </HomeContainer>
+    </main>
   );
 };

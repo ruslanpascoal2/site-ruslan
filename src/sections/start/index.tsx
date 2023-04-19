@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import {
@@ -6,6 +6,7 @@ import {
   PurpleButton,
 } from "../../shared/components/primary-button";
 import { ContentContainer } from "../../shared/components/page-layout";
+import { gsap } from "gsap";
 
 const StartSection = styled.section`
   min-height: 100vh;
@@ -34,15 +35,49 @@ const Content = styled.div`
 `;
 
 export const Start = () => {
+  const el = useRef<any>(null);
+  const tl = useRef<any>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      tl.current = gsap
+        .timeline()
+        .from(".head", {
+          duration: 0.75,
+          y: -300,
+          autoAlpha: 0,
+          stagger: 1.5,
+          ease: "circ.out",
+        })
+        .from(".sub", {
+          duration: 0.75,
+          y: -150,
+          autoAlpha: 0,
+          stagger: 1.5,
+          ease: "circ.out",
+        })
+        .from("a", {
+          duration: 0.75,
+          x: -150,
+          ease: "back.out(1.7)",
+          autoAlpha: 0,
+          stagger: 1.5,
+        });
+    }, el);
+    return () => {
+      ctx.revert();
+    };
+  }, []);
+
   return (
     <StartSection id="inicio">
       <ContentContainer>
-        <Content>
-          <Head>
+        <Content ref={el}>
+          <Head className="head">
             Transformar ideias em soluções digitais modernas e de alta
             qualidade.
           </Head>
-          <Sub>
+          <Sub className="sub">
             Conte comigo para construir a presença online da sua empresa com
             criatividade e rapidez.
           </Sub>
