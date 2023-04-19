@@ -60,7 +60,7 @@ const experiences: Experience[] = [
 
 const ExperienceSection = styled.section`
   background-color: var(--color-bg);
-  min-height: 50vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   ${tw`

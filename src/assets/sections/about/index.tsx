@@ -9,10 +9,11 @@ import {
   MediumOutlined,
 } from "@ant-design/icons";
 import eu from "../../images/me.png";
+import peep from "../../images/peep-47.svg";
 
 const AboutSection = styled.section`
   background-color: var(--color-bg-lighter);
-  min-height: 50vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   ${tw`
@@ -33,8 +34,8 @@ const AboutBoard = styled.div`
 
 const ImageContainer = styled.div`
   border-radius: 4px;
-  background-color: #0f0f0f;
-  /* background-image: url(${eu}); */
+  /* background-color: #0f0f0f; */
+  background-image: url(${peep}); 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
