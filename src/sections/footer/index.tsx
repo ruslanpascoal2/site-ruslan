@@ -32,7 +32,7 @@ export const Footer = () => {
     <FooterSection>
       <FooterContainer>
         <Row>
-          <h1> Copyright © 2023 Ruslan.</h1>
+          <h1> Copyright © 2023 - Ruslan.</h1>
         </Row>
       </FooterContainer>
     </FooterSection>
