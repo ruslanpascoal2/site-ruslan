@@ -8,7 +8,7 @@ import {
 import { gsap } from "gsap";
 
 const StartSection = styled.section`
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -29,7 +29,7 @@ export const Home = () => {
       <Start />
       <About />
       <Experience />
-      <Projects/>
+      {/* <Projects/> */}
       <Footer/>
     </main>
   );

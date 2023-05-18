@@ -12,7 +12,7 @@ import peep from "../../assets/images/peep-47.svg";
 
 const AboutSection = styled.section`
   background-color: var(--color-bg-lighter);
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   ${tw`
@@ -103,12 +103,10 @@ export const About = () => {
             <Text>Fullstack Developer</Text>
             <Text style={{ marginTop: "2rem" }}>
               Sou um desenvolvedor fullstack com expertise no front-end e três
-              anos de experiência na área. Tenho uma paixão especial por criar
-              interfaces de usuário bonitas e modernas, usando minhas
-              habilidades em Angular, React.js e Node.js. Adoro o desafio de
-              transformar uma ideia em um produto finalizado e utilizável, e
-              estou sempre buscando novas maneiras de aprimorar minhas
-              habilidades e conhecimentos para oferecer o melhor resultado.
+              anos de experiência na área. 
+              <br/>Gosto bastante de criar coisas novas e trabalhar em projetos inovadores.
+              <br/>Prezo pela organização, boas práticas e profissionalismo no trabalho.
+              <br/>Atualmente estou em busca de desenvolver minhas habilidades em outras áreas do desenvolvimento web.
             </Text>
             <SocialMediaContainer>
               <SocialMedia

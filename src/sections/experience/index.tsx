@@ -12,6 +12,7 @@ type Experience = {
   company: string;
   desc: string;
   id: number;
+  stack: string[];
 };
 
 const experiences: Experience[] = [
@@ -23,6 +24,7 @@ const experiences: Experience[] = [
     Como desenvolvedor front-end, fui responsável pela construção de uma aplicação de gestão do zero. 
     Além disso, treinei e mentorei desenvolvedores juniores e estagiários, compartilhando meu conhecimento sobre boas práticas e padrões de projeto para garantir a qualidade do trabalho.`,
     id: 0,
+    stack: ['Angular 5', 'Javascript', 'Typescript', 'HTML', 'CSS']
   },
   {
     title: "Desenvolvedor Front-end",
@@ -34,6 +36,7 @@ const experiences: Experience[] = [
     desenvolvimento de funcionalidades e resolução de bugs, usando tecnologias como Angular e Typescript.
     `,
     id: 1,
+    stack: ['Angular 7', 'Javascript', 'Typescript', 'HTML', 'CSS']
   },
   {
     title: "Desenvolvedor Front-end",
@@ -44,6 +47,7 @@ const experiences: Experience[] = [
     Minhas principais responsabilidade foram o desenvolvimento de novas funcionalidades para a plataforma, bem como testes unitários e resolução de bugs,
     utilizando tecnologias como Angular, Typescript, Jest, Ngxs e RxJs.`,
     id: 2,
+    stack: ['Angular 13', 'Javascript', 'Typescript', 'HTML', 'CSS']
   },
   {
     title: "Desenvolvedor Front-end",
@@ -55,12 +59,24 @@ const experiences: Experience[] = [
     e code review.
     `,
     id: 3,
+    stack: ['Angular 13', 'Javascript', 'Typescript', 'HTML', 'CSS']
+  },
+  {
+    title: "Desenvolvedor Front-end",
+    company: "WeKnow HealthTech",
+    date: "Abril/2023 a atual",
+    desc: `
+    Atualmente faço parte do projeto do web app do WeKnow, líder no ramo de gestão hospitalar.
+    Desenvolvimento de novas funcionalidades e manutenção e sistema legado em AngularJS.
+    `,
+    id: 4,
+    stack: ['Angular 12', 'AngularJS', 'Javascript', 'Typescript', 'HTML', 'CSS']
   },
 ];
 
 const ExperienceSection = styled.section`
   background-color: var(--color-bg);
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   ${tw`
@@ -94,10 +110,8 @@ const Content = styled.div`
   margin-top: 3rem;
   display: flex;
   align-items: flex-start;
-  ${
-    tw`
-    flex-wrap lg:flex-nowrap pb-12`
-  }
+  ${tw`
+    flex-wrap lg:flex-nowrap pb-12`}
 `;
 
 const ExperienceContainer = styled.div`
@@ -116,6 +130,12 @@ const Company = styled.h2`
   color: var(--color-purple);
   ${tw`my-4`}
 `;
+
+const Stack = styled.div`
+  ${tw`
+    space-x-4
+  `}
+`
 
 export const Experience = () => {
   const [selected, setSelected] = useState<Experience>(experiences[0]);
@@ -140,7 +160,11 @@ export const Experience = () => {
             <Flex>
               <span style={{ fontSize: "24px" }}>{selected.title}</span>
               <span
-                style={{ textAlign: 'end', fontSize: "14px", color: "var(--color-white-muted)" }}
+                style={{
+                  textAlign: "end",
+                  fontSize: "14px",
+                  color: "var(--color-white-muted)",
+                }}
               >
                 {selected.date}
               </span>
@@ -149,6 +173,28 @@ export const Experience = () => {
             <p style={{ fontSize: "16px", color: "var(--color-white-muted)" }}>
               {selected.desc}
             </p>
+            <p
+              style={{
+                marginTop: "2rem",
+                fontSize: "16px",
+                color: "var(--color-white)",
+              }}
+            >
+              Tecnologias
+            </p>
+            <Stack>
+              {selected.stack.map((item) => (
+                <span
+                  style={{
+                    marginTop: ".5rem",
+                    fontSize: "12px",
+                    color: "var(--color-white-muted)",
+                  }}
+                >
+                  {item}
+                </span>
+              ))}
+            </Stack>
           </ExperienceContainer>
         </Content>
       </ContentContainer>

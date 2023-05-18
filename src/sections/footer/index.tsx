@@ -4,6 +4,7 @@ import tw from "twin.macro";
 import { ContentContainer } from "../../shared/components/page-layout";
 
 const FooterSection = styled.footer`
+  border-top: 1px solid var(--color-purple-muted);
   background-color: var(--color-bg);
   min-height: 100px;
   display: flex;
@@ -13,26 +14,25 @@ const FooterSection = styled.footer`
     `}
 
   h1 {
-
     color: var(--color-white-muted);
     ${tw`text-xs text-center`}
   }
 `;
 
 const Row = styled.div`
-    ${tw`flex items-center justify-center`}
-`
+  ${tw`flex items-center justify-center`}
+`;
 
 const FooterContainer = styled.div`
   ${tw`container`}
-`
+`;
 
 export const Footer = () => {
   return (
     <FooterSection>
       <FooterContainer>
         <Row>
-        <h1> Copyright © 2023 Ruslan.</h1>
+          <h1> Copyright © 2023 Ruslan.</h1>
         </Row>
       </FooterContainer>
     </FooterSection>

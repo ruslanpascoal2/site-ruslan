@@ -118,12 +118,12 @@ export const Navbar = () => {
                 <MenuItem>
                   <MenuLink href="#experiencia">Experiência</MenuLink>
                 </MenuItem>
-                <MenuItem>
+                {/* <MenuItem>
                   <MenuLink href="#projetos">Projetos</MenuLink>
-                </MenuItem>
-                <MenuItem>
+                </MenuItem> */}
+                {/* <MenuItem>
                   <MenuLink>EN</MenuLink>
-                </MenuItem>
+                </MenuItem> */}
               </MenuContainer>
             </>
           ) : (
