@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { ContentContainer } from "../../shared/components/page-layout";
 import tw from "twin.macro";
 import {
+  CheckCircleFilled,
+  CheckCircleOutlined,
   GithubOutlined,
   InstagramOutlined,
   LinkedinOutlined,
@@ -33,7 +35,7 @@ const AboutBoard = styled.div`
 
 const ImageContainer = styled.div`
   border-radius: 4px;
-  background-image: url(${peep}); 
+  background-image: url(${peep});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -64,6 +66,7 @@ const MyName = styled.h1`
   color: #fff;
   font-weight: 500;
   font-size: 32px;
+  line-height: 1.2;
 `;
 
 const Text = styled.p`
@@ -97,9 +100,23 @@ const ExperienceLink = styled.a`
   font-family: "Muli", sans-serif;
   font-size: 14px;
   text-decoration: underline;
-  color: var(--color-purple);
+  color: var(--color-orange);
   width: fit-content;
+`;
+
+const BioRow = styled.li`
+  display: flex;
+  align-items: center;
+  ${tw`
+    space-x-4
+  `}
+  line-height: 1.3;
+  margin-bottom: 1rem;
 `
+
+const CustomCheckCircleFilled = styled(CheckCircleFilled)`
+  color: var(--color-purple);
+`;
 
 export const About = () => {
   return (
@@ -107,17 +124,38 @@ export const About = () => {
       <ContentContainer>
         <AboutBoard>
           <ImageContainer></ImageContainer>
-          <BioContainer >
-          <Title>Quem sou eu</Title>
+          <BioContainer>
+            <Title>Quem sou eu</Title>
             <MyName>Ruslan de Araújo e Pascoal</MyName>
             <Text>Fullstack Developer</Text>
+            <ul >
             <Text style={{ marginTop: "2rem" }}>
-              Sou um desenvolvedor fullstack com expertise no front-end e três
-              anos de experiência na área. 
-              <br/>Gosto bastante de criar coisas novas e trabalhar em projetos inovadores.
-              <br/>Prezo pela organização, boas práticas e profissionalismo no trabalho.
-              <br/>Atualmente estou em busca de desenvolver minhas habilidades em outras áreas do desenvolvimento web.
+              <BioRow>
+                <CustomCheckCircleFilled/>
+                <span> Sou um desenvolvedor fullstack com expertise no front-end e três
+                anos de experiência na área.</span>
+              </BioRow>
+              <BioRow>
+              <CustomCheckCircleFilled/>
+               <span>
+               Gosto bastante de criar coisas novas e trabalhar em projetos
+                inovadores.
+               </span>
+              </BioRow>
+              <BioRow>
+              <CustomCheckCircleFilled/>
+                <span>
+                Prezo pela organização, boas práticas e profissionalismo no
+                trabalho.
+                </span>
+              </BioRow>
+              <BioRow>
+              <CustomCheckCircleFilled/>
+               <span> Atualmente estou em busca de desenvolver minhas habilidades em
+                outras áreas do desenvolvimento web.</span>
+              </BioRow>
             </Text>
+            </ul>
             <ExperienceLink href="#experiencia">Ver experiência</ExperienceLink>
             <SocialMediaContainer>
               <SocialMedia
