@@ -91,6 +91,16 @@ const SocialMediaContainer = styled.div`
   ${tw`flex items-center space-x-2 lg:space-x-6 mt-6 pb-10`}
 `;
 
+const ExperienceLink = styled.a`
+  cursor: pointer;
+  margin-top: 1rem;
+  font-family: "Muli", sans-serif;
+  font-size: 14px;
+  text-decoration: underline;
+  color: var(--color-purple);
+  width: fit-content;
+`
+
 export const About = () => {
   return (
     <AboutSection id="quem-sou-eu">
@@ -108,6 +118,7 @@ export const About = () => {
               <br/>Prezo pela organização, boas práticas e profissionalismo no trabalho.
               <br/>Atualmente estou em busca de desenvolver minhas habilidades em outras áreas do desenvolvimento web.
             </Text>
+            <ExperienceLink href="#experiencia">Ver experiência</ExperienceLink>
             <SocialMediaContainer>
               <SocialMedia
                 href="https://www.linkedin.com/in/ruslan-pascoal-561214a0/"

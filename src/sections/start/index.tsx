@@ -50,9 +50,6 @@ export const Start = () => {
       scale: 0.8,
     });
 
-    btn.current.addEventListener("mouseenter", () => animation.play());
-    btn.current.addEventListener("mouseleave", () => animation.reverse());
-
     const ctx = gsap.context(() => {
       tl.current = gsap
         .timeline()
@@ -86,19 +83,17 @@ export const Start = () => {
       <StartSectionContainer>
         <Content ref={el}>
           <Head className="head">
-            Transformar ideias em soluções digitais modernas e de alta
-            qualidade.
+            Faço programas
           </Head>
           <Sub className="sub">
             Conte comigo para construir a presença online da sua empresa com
             criatividade e rapidez.
           </Sub>
           <a
-            href="https://www.linkedin.com/in/ruslan-pascoal-561214a0/"
-            target="_blank"
+            href="#quem-sou-eu"
           >
             <OrangeButton className="btn-home" ref={btn} style={{ width: "200px" }}>
-              Linkedin
+              Quem sou eu
             </OrangeButton>
           </a>
         </Content>
