@@ -99,9 +99,9 @@ export const Menu = () => {
         <MenuItem onClick={onMenuClick} href="#experiencia">
           Experiência
         </MenuItem>
-        <MenuItem onClick={onMenuClick} href="#projetos">
+        {/* <MenuItem onClick={onMenuClick} href="#projetos">
           Projetos
-        </MenuItem>
+        </MenuItem> */}
       </MenuList>
     </MenuContainer>
   );
