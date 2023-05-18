@@ -24,7 +24,7 @@ const experiences: Experience[] = [
     Como desenvolvedor front-end, fui responsável pela construção de uma aplicação de gestão do zero. 
     Além disso, treinei e mentorei desenvolvedores juniores e estagiários, compartilhando meu conhecimento sobre boas práticas e padrões de projeto para garantir a qualidade do trabalho.`,
     id: 0,
-    stack: ['Angular 5', 'Javascript', 'Typescript', 'HTML', 'CSS']
+    stack: ["Angular 5", "Javascript", "Typescript", "HTML", "CSS"],
   },
   {
     title: "Desenvolvedor Front-end",
@@ -36,7 +36,7 @@ const experiences: Experience[] = [
     desenvolvimento de funcionalidades e resolução de bugs, usando tecnologias como Angular e Typescript.
     `,
     id: 1,
-    stack: ['Angular 7', 'Javascript', 'Typescript', 'HTML', 'CSS']
+    stack: ["Angular 7", "Javascript", "Typescript", "HTML", "CSS"],
   },
   {
     title: "Desenvolvedor Front-end",
@@ -47,7 +47,7 @@ const experiences: Experience[] = [
     Minhas principais responsabilidade foram o desenvolvimento de novas funcionalidades para a plataforma, bem como testes unitários e resolução de bugs,
     utilizando tecnologias como Angular, Typescript, Jest, Ngxs e RxJs.`,
     id: 2,
-    stack: ['Angular 13', 'Javascript', 'Typescript', 'HTML', 'CSS']
+    stack: ["Angular 13", "Javascript", "Typescript", "HTML", "CSS"],
   },
   {
     title: "Desenvolvedor Front-end",
@@ -59,7 +59,7 @@ const experiences: Experience[] = [
     e code review.
     `,
     id: 3,
-    stack: ['Angular 13', 'Javascript', 'Typescript', 'HTML', 'CSS']
+    stack: ["Angular 13", "Javascript", "Typescript", "HTML", "CSS"],
   },
   {
     title: "Desenvolvedor Front-end",
@@ -70,13 +70,20 @@ const experiences: Experience[] = [
     Desenvolvimento de novas funcionalidades e manutenção e sistema legado em AngularJS.
     `,
     id: 4,
-    stack: ['Angular 12', 'AngularJS', 'Javascript', 'Typescript', 'HTML', 'CSS']
+    stack: [
+      "Angular 12",
+      "AngularJS",
+      "Javascript",
+      "Typescript",
+      "HTML",
+      "CSS",
+    ],
   },
 ];
 
 const ExperienceSection = styled.section`
   background-color: var(--color-bg);
-  min-height: 90vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
   ${tw`
@@ -135,7 +142,7 @@ const Stack = styled.div`
   ${tw`
     space-x-4
   `}
-`
+`;
 
 export const Experience = () => {
   const [selected, setSelected] = useState<Experience>(experiences[0]);
@@ -183,8 +190,9 @@ export const Experience = () => {
               Tecnologias
             </p>
             <Stack>
-              {selected.stack.map((item) => (
+              {selected.stack.map((item, i) => (
                 <span
+                  key={i}
                   style={{
                     marginTop: ".5rem",
                     fontSize: "12px",

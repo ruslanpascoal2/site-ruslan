@@ -4,22 +4,29 @@ import tw from "twin.macro";
 import { MenuOutlined } from "@ant-design/icons";
 import { useMediaQuery } from "react-responsive";
 import { ContentContainer } from "../page-layout";
-import { toggleMenu } from "../../../store/store";
+import { store, toggleMenu } from "../../../store/store";
+import { useSnapshot } from "valtio";
 
-const NavbarContainer = styled.div`
+type NavbarContainer = {
+  isScrolled?: boolean;
+};
+const NavbarContainer = styled.div<NavbarContainer>`
   height: 100px;
   position: fixed;
   z-index: 2;
   top: 0;
   left: 0;
-  background-color: var(--color-bg);
+  background-color: ${({ isScrolled }) =>
+    isScrolled ? "var(--color-bg)" : "transparent"};
   ${tw`
   w-screen
         px-5 lg:px-0
         flex
         items-center
         `}
-  border-bottom: 1px solid var(--color-purple-muted);
+  border-bottom: ${({ isScrolled }) =>
+    isScrolled ? " 1px solid var(--color-purple-muted)" : "none"};
+  transition: background .25s;
 `;
 
 const NavbarContent = styled.div`
@@ -30,8 +37,8 @@ const NavbarContent = styled.div`
 `;
 
 const NavbarContentContainer = styled(ContentContainer)`
-padding-top: 0;
-`
+  padding-top: 0;
+`;
 
 const Logo = styled.div`
   ${tw`
@@ -94,17 +101,19 @@ export const Navbar = () => {
 
   const openMenu = () => {
     toggleMenu();
-  }
+  };
+
+  const { isScrolled } = useSnapshot(store);
 
   return (
-    <NavbarContainer>
+    <NavbarContainer isScrolled={isScrolled}>
       <NavbarContentContainer>
         <NavbarContent>
           <a href="#inicio">
-          <Logo>
-            <LogoName>Ruslan</LogoName>
-            <LogoSub>web developer</LogoSub>
-          </Logo>
+            <Logo>
+              <LogoName>Ruslan</LogoName>
+              <LogoSub>web developer</LogoSub>
+            </Logo>
           </a>
           {isDesktopOrLaptop ? (
             <>

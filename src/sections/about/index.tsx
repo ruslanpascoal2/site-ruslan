@@ -12,7 +12,7 @@ import peep from "../../assets/images/peep-47.svg";
 
 const AboutSection = styled.section`
   background-color: var(--color-bg-lighter);
-  min-height: 90vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
   ${tw`

@@ -5,7 +5,7 @@ import tw, { GlobalStyles as BaseStyles } from "twin.macro";
 const CustomStyles = createGlobalStyle`
 
  body{
-  --color-bg: rgb(13 11 23);
+  --color-bg:#0D0B17;
   --color-bg-lighter: #15131f;
   --color-muted: #19162a;
   --color-red: #e51d37;
@@ -18,6 +18,11 @@ const CustomStyles = createGlobalStyle`
   --color-white-muted: #d8d8d8;
   --navbar-height-offset: -130px;
   font-family: 'Archivo', sans-serif;
+  
+  *::selection {
+    background-color: var(--color-orange);
+    color: var(--color-bg);
+  }
 }
 html {
   scroll-behavior: smooth;

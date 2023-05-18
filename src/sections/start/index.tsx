@@ -6,21 +6,37 @@ import {
   PurpleButton,
 } from "../../shared/components/primary-button";
 import { gsap } from "gsap";
+import blobs from "../../assets/images/blob-scene-haikei.png";
+import blobsMobile from "../../assets/images/blob-scene-haikei-mob.png";
+import { useMediaQuery } from 'react-responsive'
 
-const StartSection = styled.section`
-  min-height: 90vh;
+const bgDesktop = `url(${blobs})`;
+const bgMobile = `url(${blobsMobile})`;
+
+type StartSectionProps = {
+  isMobile?: boolean
+}
+const StartSection = styled.section<StartSectionProps>`
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: ${(props) => props.isMobile ? bgMobile : bgDesktop};
   ${tw`
      items-center lg:items-start
     `}
 `;
 
 const Head = styled.h1`
-  ${tw`text-3xl lg:text-4xl text-center lg:text-start w-full lg:w-3/4`}
+  font-size: 100px;
+  line-height: 1.05;
+  ${tw`text-center lg:text-start w-full`}
   font-weight: 500;
   margin-bottom: 2rem;
+  color: var(--color-purple);
 `;
 
 const Sub = styled.h5`
@@ -35,14 +51,15 @@ const Content = styled.div`
 
 const StartSectionContainer = styled.div`
   ${tw`container`}
-`
+`;
 
 export const Start = () => {
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
   const el = useRef<any>(null);
   const tl = useRef<any>(null);
   const btn = useRef<any>(null);
 
-  
   useLayoutEffect(() => {
     let animation = gsap.to(".btn-home", {
       paused: true,
@@ -79,20 +96,20 @@ export const Start = () => {
   }, []);
 
   return (
-    <StartSection id="inicio">
+    <StartSection id="inicio" isMobile={isTabletOrMobile}>
       <StartSectionContainer>
         <Content ref={el}>
-          <Head className="head">
-            Faço programas
-          </Head>
+          <Head className="head">I love to create</Head>
           <Sub className="sub">
-            Conte comigo para construir a presença online da sua empresa com
+            Conte comigo para construir soluções digitais com
             criatividade e rapidez.
           </Sub>
-          <a
-            href="#quem-sou-eu"
-          >
-            <OrangeButton className="btn-home" ref={btn} style={{ width: "200px" }}>
+          <a href="#quem-sou-eu">
+            <OrangeButton
+              className="btn-home"
+              ref={btn}
+              style={{ width: "200px" }}
+            >
               Quem sou eu
             </OrangeButton>
           </a>

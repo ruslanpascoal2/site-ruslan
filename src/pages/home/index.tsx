@@ -6,31 +6,39 @@ import Projects from "../../sections/projects";
 import { Footer } from "../../sections/footer";
 import { Menu } from "../../shared/components/menu";
 import { useSnapshot } from "valtio";
-import { store } from "../../store/store";
+import { store, toggleScrolled } from "../../store/store";
 
 export const Home = () => {
-
-  const {isMenuOpen} = useSnapshot(store);
+  const { isMenuOpen } = useSnapshot(store);
 
   useEffect(() => {
-    if(isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
     }
-    else{
-      document.body.style.overflow = 'unset';
-    }
-  }, [isMenuOpen])
+
+    const handleScroll = () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      toggleScrolled(scrollTop > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isMenuOpen]);
 
   return (
     <main>
-      {
-        isMenuOpen && <Menu/>
-      }
+      {isMenuOpen && <Menu />}
       <Start />
       <About />
       <Experience />
       {/* <Projects/> */}
-      <Footer/>
+      <Footer />
     </main>
   );
 };
