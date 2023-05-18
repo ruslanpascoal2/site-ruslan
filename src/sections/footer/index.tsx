@@ -6,7 +6,7 @@ import { ContentContainer } from "../../shared/components/page-layout";
 const FooterSection = styled.footer`
   border-top: 1px solid var(--color-purple-muted);
   background-color: var(--color-bg);
-  min-height: 100px;
+  min-height: 5vh;
   display: flex;
   align-items: center;
   ${tw`
