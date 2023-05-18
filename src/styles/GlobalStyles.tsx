@@ -6,7 +6,7 @@ const CustomStyles = createGlobalStyle`
 
  body{
   --color-bg:#0D0B17;
-  --color-bg-lighter: #15131f;
+  --color-bg-lighter: #171522;
   --color-muted: #19162a;
   --color-red: #e51d37;
   --color-pink: #ff3a5e;

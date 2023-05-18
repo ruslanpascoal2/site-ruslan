@@ -90,6 +90,7 @@ const ExperienceSection = styled.section`
     px-5 lg:pe-16 items-center lg:justify-center 
     `}
   padding-top: 2rem;
+  padding-bottom: 2rem;
 `;
 
 const Menu = styled.ul`
@@ -140,8 +141,9 @@ const Company = styled.h2`
 
 const Stack = styled.div`
   ${tw`
-    space-x-4
+    space-y-4 lg:space-y-0 lg:space-x-4 flex flex-col lg:flex-row
   `}
+
 `;
 
 export const Experience = () => {
