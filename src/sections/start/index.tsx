@@ -30,8 +30,8 @@ const StartSection = styled.section<StartSectionProps>`
     `}
 `;
 
-const Head = styled.h1`
-  font-size: 100px;
+const Head = styled.h1<{isMobile: boolean}>`
+  font-size: ${({isMobile}) => isMobile ? '100px' : '120px' };
   line-height: 1.05;
   ${tw`text-center lg:text-start w-full`}
   font-weight: 500;
@@ -99,7 +99,7 @@ export const Start = () => {
     <StartSection id="inicio" isMobile={isTabletOrMobile}>
       <StartSectionContainer>
         <Content ref={el}>
-          <Head className="head">I love to create</Head>
+          <Head className="head" isMobile={isTabletOrMobile}>I love to create</Head>
           <Sub className="sub">
             Conte comigo para construir soluções digitais com
             criatividade e rapidez.
